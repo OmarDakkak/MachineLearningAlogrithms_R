@@ -32,3 +32,7 @@ test_set = subset(dataset, split == FALSE)
 regressor = lm(formula = Profit ~ .,
                data = training_set) # The "." (dot) replaces all the other independent variables 
 summary(regressor)
+
+# Predicting the Test set results
+y_pred = predict(regressor, newdata = test_set)
+
