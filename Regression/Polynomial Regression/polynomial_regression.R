@@ -43,7 +43,7 @@ dataset = dataset[2:3]
   
   
 # Visualising the Polynomial Regression results
-# install.packages('ggplot2')
+  # install.packages('ggplot2')
   library(ggplot2)
   ggplot() +
     geom_point(aes(x= dataset$Level, y=dataset$Salary),
