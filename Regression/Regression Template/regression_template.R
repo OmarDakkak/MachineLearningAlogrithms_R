@@ -25,7 +25,7 @@ dataset = dataset[2:3]
 
 
 # Predicting a new result     
-y_pred = predict(poly_reg, data.frame(Level = 6.5))
+y_pred = predict(regressor, data.frame(Level = 6.5))
 
 # Visualising the Regression Model results
 #install.packages('ggplot2')
@@ -33,7 +33,7 @@ library(ggplot2)
 ggplot() +
   geom_point(aes(x= dataset$Level, y=dataset$Salary),
              color = 'red') +
-  geom_line(aes(x= dataset$Level, y= predict(poly_reg, newdata = dataset)),
+  geom_line(aes(x= dataset$Level, y= predict(regressor, newdata = dataset)),
             color = 'green') +
   ggtitle('Truth or bluff (Regression Model)') +
   xlab('Level') +
@@ -46,7 +46,7 @@ x_grid = seq(min(dataset$Level, max(dataset$Level), 0.1))
 ggplot() +
   geom_point(aes(x= dataset$Level, y=dataset$Salary),
              color = 'red') +
-  geom_line(aes(x= x_grid, y= predict(poly_reg, newdata = data.frame(Level = x_grid))),
+  geom_line(aes(x= x_grid, y= predict(regressor, newdata = data.frame(Level = x_grid))),
             color = 'green') +
   ggtitle('Truth or bluff (Regression Model)') +
   xlab('Level') +
